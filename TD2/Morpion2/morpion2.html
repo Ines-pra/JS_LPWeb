@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>Morpion</title>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="morpion2.css" />
+    </head>
+    <body>
+        <div id="container">
+            <h1>MORPION</h1>
+            <h3 onload="joueurs()">Bienvenue à <span id="j1"></span> et <span id="j2"></span></h3>
+            <p> Voulez-vous jouer sur une grille de 3x3 ou de 8x8 ?</p>
+            <button id="btn3" onclick="maFonction3()">3x3</button> 
+            <button id="btn8" onclick="maFonction8()">8x8</button> <br><br>
+                
+            <div id="Jeu" style="display:none;">
+                <div id="grilleJeu">
+                   <div>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                    </div>
+                    <div>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                    </div>
+                    <div>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                    </div>
+                </div>
+            </div> <br>
+            <div id="Jeu2" style="display:none;">
+                <div id="grilleJeu">
+                    <div>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                    </div>
+                    <div>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                    </div>
+                    <div>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                    </div>
+                    <div>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                    </div>
+                    <div>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                    </div>
+                    <div>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                    </div>
+                    <div>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                    </div>
+                    <div>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                    </div>
+                </div>
+            </div>
+            <div id="Div" style="display:none;">
+                <div id="StatutJeu"></div>
+                <p onload="main()"><span id="nbG"></span></span></p>
+            </div>
+
+           <script src="morpion2.js"></script>
+        </div>
+    </body>
+</html>
