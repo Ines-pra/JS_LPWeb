@@ -1,0 +1,46 @@
+#div1{
+    text-align : center;
+    margin-top: 40px;
+    background-color: rgb(205, 217, 233);
+    margin-left: 30%;
+    margin-right: 30%;
+    padding: 20px;
+    padding-top: 10px;
+    border: 2px dotted black;
+}
+
+#div2{
+    text-align: left;
+}
+
+#div3{
+    text-align: right;
+    margin-top: 40px;
+    background-color: rgb(142, 181, 233);
+    margin-left: 30%;
+    margin-right: 30%;
+    padding: 20px;
+    padding-top: 10px;;
+    border: 2px dotted black;
+}
+
+#div3 p{
+    text-align: right;
+}
+
+h2 {
+    text-align: center;
+    text-shadow: 0.02em 0.02em 0.5em black;
+}
+
+button{
+    border : none;
+    border-radius: 25px;
+    padding: 5px;
+    background-color: white;
+    
+}
+
+button:hover {
+    background-color: #7da0ce;  
+}
