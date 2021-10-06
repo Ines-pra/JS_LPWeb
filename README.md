@@ -1,5 +1,11 @@
 # PERRIA_js
-
+<h3> Toisième TD de Javascript </h3>
+<li> Première partie de l'énoncé <br>
+  La fonction mod() répond à cette question et affiche dans la console le résultat des fonctions récupérées grâce à un tableau et un élément prédéfini </li>
+ 
+<li> Seconde partie de l'énoncé <br>
+ Cette partie est exécutable à partir du fichier td3.html </li>
+ 
 <h3>Second TD de Javascript</h3>
 
 <li> Le premier exercice se trouve dans le fichier MMM <br>
