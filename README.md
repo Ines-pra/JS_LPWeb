@@ -1,5 +1,9 @@
 # PERRIA_js
-<h3> Toisième TD de Javascript </h3>
+<h3> Quatrième TD de Javascript </h3>
+<li> La séparation du js et du modules a été réalisé grâce à vous lorsque vous avez aidé Florian à côté de moi, vous remarquerez donc une certaine similarité entre nos deux codes, du fait que nous ayons travaillé ensemble une bonne partie du tp. Nous avons commencé à travailler de notre côté à partir du moment ou les caractères s'affichèrent correctement sur la grille.</li>
+<li> Pour finioler le td, je suis entrain de rajouter l'ajout de nom de joueur comme vous nous l'aviez précisez en td, le travail est encore en cours et sera déposer un peu plus tard </li>
+
+<h3> Troisième TD de Javascript </h3>
 <li> Première partie de l'énoncé <br>
   La fonction mod() répond à cette question et affiche dans la console le résultat des fonctions récupérées grâce à un tableau et un élément prédéfini </li>
  
