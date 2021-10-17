@@ -12,10 +12,36 @@ let modeDeJeu;
 let zoneMessage;
 let victoire;
 
-const btnReset = document.getElementById('btn_reset');
-btnReset.addEventListener('click', recommence);
+let j1;
+let j2;
+let div1;
+let div2;
 
-// * FAIT
+const btnReset = document.getElementById('btn_reset');
+const btnValidJ = document.getElementById("btn_validJ");
+btnValidJ.addEventListener('click', ajoutJ);
+div1 = document.getElementById("DIV1");
+div2 = document.getElementById("DIV2");
+div2.style.display = "none";
+
+function ajoutJ(){
+    j1 = document.getElementById("j1").value;
+    j2 = document.getElementById("j2").value;
+    console.log(j1,j2);
+    
+    document.getElementById('score').innerHTML = (j1 + ' : ' + scores[0] + ' - ' + j2 + '  : ' + scores[1]);
+
+    if (j1 !== '' && j2!==''){
+        btnReset.addEventListener('click', recommence);
+        div2.style.display = "block";
+        div1.style.display = "none";
+    }
+    else{
+        window.alert("Veuillez saisir un nom pour tous les joueurs")
+    }
+}
+
+
 function recommence() {
     zoneMessage = document.getElementById('messages');
     taille = Number.parseInt(document.getElementById('taille').value);
@@ -46,9 +72,9 @@ function recommence() {
             }
         }
         nbCoups = 0;
-        joueur = 1;
+        joueur = j1;
         symbole = 'x';
-        zoneMessage.innerHTML = 'Joueur 1, à toi !';
+        zoneMessage.innerHTML = (j1 + ', à toi !');
         document.getElementById('btn_reset').disabled = true;
     } catch(e){
         console.log(e);
@@ -71,22 +97,22 @@ function clicBouton(uneCase, y, x) {
         if (victoire) {
             console.log("Victoire");
 
-            zoneMessage.innerHTML = 'Le joueur ' + joueur + ' a gagné !';
+            zoneMessage.innerHTML = (joueur + ' a gagné !');
             desactiveEcouteurs();
             symbole === 'x' ? scores[0]++ : scores[1]++;
-            document.getElementById('score').innerHTML = 'X : ' + scores[0] + ' - O  : ' + scores[1];
+            document.getElementById('score').innerHTML = (j1 + ' : ' + scores[0] + ' - ' + j2 +'  : ' + scores[1]);
         } else if (nbCoups === taille * taille) {
             zoneMessage.innerHTML = 'Match nul !';
             desactiveEcouteurs();
         } else {
             if (symbole === 'x') {
                 symbole = 'o';
-                joueur = 2;
+                joueur = j2;
             } else {
                 symbole = 'x';
-                joueur = 1;
+                joueur = j1;
             } 
-            zoneMessage.innerHTML = 'Joueur ' + joueur + ', à toi de jouer !';
+            zoneMessage.innerHTML = (joueur + ', à toi de jouer !');
         }
     } else {
         zoneMessage.innerHTML = 'Case déjà occupée !!! ';
@@ -101,7 +127,4 @@ function desactiveEcouteurs() {
         btn_grille[i].disabled=true;
     }
     document.getElementById('btn_reset').disabled = false;
-
 }
-
-document.getElementById('score').innerHTML = 'X : ' + scores[0] + ' - O  : ' + scores[1];
