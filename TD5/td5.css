@@ -1,0 +1,31 @@
+body{
+    background-color: aliceblue;
+    text-align: center;
+}
+
+.bodyform {
+    background-color: white;
+    border: 3px solid grey;
+    box-sizing:border-box;
+    padding:30px;
+    padding-left: 5%;
+    padding-right: 5%;
+    width:800px;
+    margin:auto;
+    margin-top: 5%;
+    opacity: 0.8;
+
+}
+
+.liste{
+    display: inline-block;
+    padding: 4px 3px 3px 5px;
+    margin: 10px;
+    width: 200px;
+    outline:none; /* remove focus ring from Webkit */
+    line-height: 1.2;
+    text-align: center;
+ /*   background: #000; 
+    color:black;
+    border:0;*/
+}
