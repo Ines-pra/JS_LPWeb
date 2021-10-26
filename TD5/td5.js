@@ -5,6 +5,7 @@ let select3 = document.getElementById("ville");
 let nbH = document.getElementById("nbH");
 let nbHT = document.getElementById("nbHT");
 window.sessionStorage.clear();
+window.localStorage.clear();
 
 //-- REGION --
 fetch('https://geo.api.gouv.fr/regions')
@@ -122,11 +123,14 @@ select2.addEventListener('change', (event) => {
   });
 }) 
 
-//-- Affichage du nb d'hab dans la ville choisie --
+
 select3.addEventListener('change', (event) =>{
+  //-- Affichage du nb d'hab dans la ville choisie --
   var index = select3.selectedIndex;
-  var valueOpt =  select3.options[index].id-1;
+  var valueOpt =  select3.options[index].id;
   nbH.innerHTML= valueOpt;
+
+  
 
   var tab = document.getElementById('tab');
   tab.innerHTML="";
@@ -189,8 +193,50 @@ select3.addEventListener('change', (event) =>{
    // var map1 = sessionStorage.getItem("arr"+k).map(x=>"arr"+k);
 */
 
-  }nbHT.innerHTML = compteurnbHT;
+  }
+  nbHT.innerHTML = compteurnbHT;
   console.log("Occurences :" +compteur);
+  
+  //--On récupère le nom de la ville choisit
+  window.localStorage.setItem("nomVille",select3.value);
 })
 
+btn.addEventListener('click', (event) =>{
 
+  
+
+  var ville = window.localStorage.getItem("nomVille");
+  if (ville==null){
+    console.log("auncune ville selectionnee");
+  }
+  else{
+    
+    var lien = "https://api.openweathermap.org/data/2.5/weather?q="+ville+"&APPID=a447d5c4772e52bf69f411a314b633ee";
+
+    fetch(lien)
+    .then(function(result) {
+      if (result.ok){
+        return result.json(); 
+      }
+    })
+    .then(function(valueM){ 
+       
+      // console.log(window.localStorage.getItem("nomVille"));
+      // console.log((valueM.main.temp-273.15).toFixed(2) + "°C");
+      // console.log((valueM.main.feels_like-273.15).toFixed(2) + "°C");
+      // console.log((valueM.main.temp_min-273.15).toFixed(2) + "°C");
+      // console.log((valueM.main.temp_max-273.15).toFixed(2) + "°C");
+      // console.log(valueM.weather[0].main);
+      // console.log(valueM.main.humidity + "%");
+
+      window.localStorage.setItem("temp", (valueM.main.temp-273.15).toFixed(2)+ "°C");
+      window.localStorage.setItem("ressenti", (valueM.main.feels_like-273.15).toFixed(2) + "°C");
+      window.localStorage.setItem("temp_min", (valueM.main.temp_min-273.15).toFixed(2) + "°C" );
+      window.localStorage.setItem("temp_max", (valueM.main.temp_max-273.15).toFixed(2) + "°C" );
+      window.localStorage.setItem("meteo", valueM.weather[0].main );
+      window.localStorage.setItem("humi", valueM.main.humidity + "%" );
+
+      document.location.href="meteo.html"; 
+    })
+  }
+})
