@@ -29,3 +29,24 @@ body{
     color:black;
     border:0;*/
 }
+
+table {
+  width: 60%;
+  text-align: center;
+    margin-top: 20px;
+  ;
+}
+td, th {
+  padding: 3px 4px;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(176, 196, 222, 0.459);
+}
+thead th {
+  border-bottom: 2px solid #333333;
+  text-align: center;
+}
+
+
+
